@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  dabeastapp:
+    build: .
+    container_name: dabeastapp
+    environment:
+      - DOCKER=1
+      - MONGO_URI=mongodb://dabeastapp-mongo:27017/express-todo
+    ports:
+      - "3001:3001"
+      - "9229:9229"
+    links:
+      - dabeastapp-mongo
+    depends_on:
+      dabeastapp-mongo:
+        condition: service_healthy
+
+  dabeastapp-mongo:
+    container_name: dabeastapp-mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
