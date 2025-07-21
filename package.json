@@ -1,8 +1,8 @@
 {
-  "name"         : "dabeastapp",
-  "version"      : "0.0.2",
+  "name": "dabeastapp",
+  "version": "0.0.2",
   "description": "An intentionally vulnerable todo list application",
-  "private"      : true,
+  "private": true,
   "homepage": "https://tigerdojo.io/",
   "repository": {
     "type": "git",
@@ -13,21 +13,21 @@
     "build": "browserify -r jquery > public/js/bundle.js",
     "cleanup": "mongo express-todo --eval 'db.todos.remove({});'"
   },
-  "dependencies" : {
-    "body-parser"     : "1.20.2",
-    "cookie-parser"   : "1.4.6",
-    "express"         : "4.18.2",
-    "ejs"             : "3.1.9",
-    "errorhandler"    : "1.5.1",
-    "method-override" : "3.0.0",
-    "ejs-locals"      : "1.0.2",
-    "mongoose"        : "7.5.1",
-    "morgan"          : "1.10.0",
-    "serve-favicon"   : "2.5.0",
-    "serve-static"    : "1.15.0"
+  "dependencies": {
+    "body-parser": "1.20.3",
+    "cookie-parser": "1.4.7",
+    "ejs": "3.1.10",
+    "ejs-locals": "1.0.2",
+    "errorhandler": "1.5.1",
+    "express": "4.21.2",
+    "method-override": "3.0.0",
+    "mongoose": "7.8.4",
+    "morgan": "1.10.1",
+    "serve-favicon": "2.5.0",
+    "serve-static": "1.16.1"
   },
-  "engines" : {
-    "npm" : ">=9.0.0",
-    "node" : ">=18.0.0"
+  "engines": {
+    "npm": ">=9.0.0",
+    "node": ">=18.0.0"
   }
 }
